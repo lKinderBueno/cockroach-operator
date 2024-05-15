@@ -386,9 +386,12 @@ spec:
         env:
         - name: RELATED_IMAGE_COCKROACH_v22_2_18
           value: cockroachdb/cockroach:arm64-v22.2.18
+          value: cockroachdb/cockroach:arm64-v22.2.18
         - name: RELATED_IMAGE_COCKROACH_v22_2_19
           value: cockroachdb/cockroach:arm64-v22.2.19
+          value: cockroachdb/cockroach:arm64-v22.2.19
         - name: RELATED_IMAGE_COCKROACH_v23_1_15
+          value: cockroachdb/cockroach:arm64-v23.1.15
           value: cockroachdb/cockroach:arm64-v23.1.15
         - name: RELATED_IMAGE_COCKROACH_v23_1_16
           value: cockroachdb/cockroach:v23.1.16
@@ -396,7 +399,9 @@ spec:
           value: cockroachdb/cockroach:v23.1.17
         - name: RELATED_IMAGE_COCKROACH_v23_2_0
           value: cockroachdb/cockroach:arm64-v23.2.0
+          value: cockroachdb/cockroach:arm64-v23.2.0
         - name: RELATED_IMAGE_COCKROACH_v23_2_1
+          value: cockroachdb/cockroach:arm64-v23.2.1
           value: cockroachdb/cockroach:arm64-v23.2.1
         - name: RELATED_IMAGE_COCKROACH_v23_2_2
           value: cockroachdb/cockroach:v23.2.2
@@ -424,6 +429,8 @@ spec:
             cpu: 10m
             memory: 32Mi
       serviceAccountName: cockroach-operator-sa
+      imagePullSecrets:
+        - name: github-registry-secret  
       imagePullSecrets:
         - name: github-registry-secret  
 ---

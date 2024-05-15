@@ -1,4 +1,5 @@
 # Copyright 2023 The Cockroach Authors
+# Copyright 2023 The Cockroach Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,13 +25,17 @@ spec:
   dataStore:
     #hostPath:
     #  path: "/data-db"
+    #hostPath:
+    #  path: "/data-db"
     pvc:
       spec:
+        storageClassName: local-path
         storageClassName: local-path
         accessModes:
           - ReadWriteOnce
         resources:
           requests:
+            storage: "20Gi"
             storage: "20Gi"
         volumeMode: Filesystem
   resources:
@@ -38,8 +43,11 @@ spec:
       # This is intentionally low to make it work on local k3d clusters.
       cpu: 100m
       memory: 500Mi
+      cpu: 100m
+      memory: 500Mi
     limits:
       cpu: 2
+      memory: 2Gi
       memory: 2Gi
   tlsEnabled: true
 # You can set either a version of the db or a specific image name
