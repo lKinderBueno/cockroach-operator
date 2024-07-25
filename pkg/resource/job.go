@@ -105,7 +105,7 @@ func (b JobBuilder) buildPodTemplate() corev1.PodTemplateSpec {
 	}
 
 	if utilfeature.DefaultMutableFeatureGate.Enabled(features.AffinityRules) {
-		pod.Spec.Affinity = b.Spec().Affinity
+		//pod.Spec.Affinity = b.Spec().Affinity
 	}
 
 	if utilfeature.DefaultMutableFeatureGate.Enabled(features.TolerationRules) {
